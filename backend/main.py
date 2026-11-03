@@ -14,7 +14,7 @@ STORAGE=ROOT/'backend/storage'; STORAGE.mkdir(parents=True,exist_ok=True)
 DB=STORAGE/'history.sqlite3'
 with sqlite3.connect(DB) as conn: conn.execute('CREATE TABLE IF NOT EXISTS analyses (id TEXT PRIMARY KEY, created_at TEXT, payload TEXT)')
 detector=Detector(); app=FastAPI(title='Microplastic Detection',version='2.0.0')
-app.add_middleware(CORSMiddleware,allow_origins=['http://localhost:5173','http://127.0.0.1:5173'],allow_methods=['GET','POST'],allow_headers=['*'])
+app.add_middleware(CORSMiddleware,allow_origins=['*'],allow_methods=['GET','POST'],allow_headers=['*'])
 
 @app.get('/results/{filename}')
 def result_file(filename:str):
