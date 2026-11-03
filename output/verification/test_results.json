@@ -1,0 +1,103 @@
+{
+  "checks": [
+    {
+      "test": "Backend healthy with trained model",
+      "passed": true
+    },
+    {
+      "test": "Model exposes actual evaluation metrics",
+      "passed": true
+    },
+    {
+      "test": "Real held-out image accepted",
+      "passed": true
+    },
+    {
+      "test": "Particle counts agree with records and classes",
+      "passed": true
+    },
+    {
+      "test": "Every detection has valid bounds and confidence",
+      "passed": true
+    },
+    {
+      "test": "Calibration measurements agree",
+      "passed": true
+    },
+    {
+      "test": "Annotated image generated",
+      "passed": true
+    },
+    {
+      "test": "PDF generated from saved analysis",
+      "passed": true
+    },
+    {
+      "test": "Analysis persisted in history",
+      "passed": true
+    },
+    {
+      "test": "No physical dimensions without calibration",
+      "passed": true
+    },
+    {
+      "test": "Unsupported file rejected",
+      "passed": true
+    },
+    {
+      "test": "Corrupt image rejected",
+      "passed": true
+    },
+    {
+      "test": "Disguised unsupported image rejected",
+      "passed": true
+    },
+    {
+      "test": "Negative calibration rejected",
+      "passed": true
+    },
+    {
+      "test": "Nonfinite calibration rejected",
+      "passed": true
+    },
+    {
+      "test": "Invalid confidence rejected",
+      "passed": true
+    },
+    {
+      "test": "Oversized upload rejected",
+      "passed": true
+    },
+    {
+      "test": "Oversized decoded image rejected",
+      "passed": true
+    },
+    {
+      "test": "Zero detections handled safely",
+      "passed": true
+    },
+    {
+      "test": "Unknown report returns 404",
+      "passed": true
+    },
+    {
+      "test": "Report ID cannot escape storage",
+      "passed": true
+    },
+    {
+      "test": "Internal database is not downloadable",
+      "passed": true
+    },
+    {
+      "test": "Configured frontend origin allowed",
+      "passed": true
+    },
+    {
+      "test": "Missing model gives readable configuration error",
+      "passed": true
+    }
+  ],
+  "passed": 24,
+  "sample_particles": 4,
+  "sample_analysis_id": "61fdd081a2c748c786927a9927314717"
+}

@@ -1,0 +1,69 @@
+{
+  "total_particles": 4,
+  "detections": [
+    {
+      "particle_id": 1,
+      "class_name": "microplastic_fragment",
+      "confidence": 0.8249654173851013,
+      "x1": 886.69677734375,
+      "y1": 295.76953125,
+      "x2": 918.5169677734375,
+      "y2": 326.9085693359375,
+      "width_pixels": 31.8201904296875,
+      "height_pixels": 31.1390380859375,
+      "area_pixels": 990.850121691823
+    },
+    {
+      "particle_id": 2,
+      "class_name": "microplastic_fragment",
+      "confidence": 0.7886636257171631,
+      "x1": 485.45916748046875,
+      "y1": 521.86865234375,
+      "x2": 553.8228149414062,
+      "y2": 589.972900390625,
+      "width_pixels": 68.3636474609375,
+      "height_pixels": 68.104248046875,
+      "area_pixels": 4655.854804068804
+    },
+    {
+      "particle_id": 3,
+      "class_name": "microplastic_fragment",
+      "confidence": 0.570156455039978,
+      "x1": 329.34222412109375,
+      "y1": 399.82647705078125,
+      "x2": 381.42132568359375,
+      "y2": 482.625244140625,
+      "width_pixels": 52.0791015625,
+      "height_pixels": 82.79876708984375,
+      "area_pixels": 4312.085400521755
+    },
+    {
+      "particle_id": 4,
+      "class_name": "microplastic_fragment",
+      "confidence": 0.46002548933029175,
+      "x1": 992.5574951171875,
+      "y1": 403.4427490234375,
+      "x2": 1051.2247314453125,
+      "y2": 445.1278076171875,
+      "width_pixels": 58.667236328125,
+      "height_pixels": 41.68505859375,
+      "area_pixels": 2445.547183871269
+    }
+  ],
+  "class_distribution": {
+    "microplastic_fragment": 4
+  },
+  "average_confidence": 0.6609527468681335,
+  "contamination_level": "Low",
+  "inference_ms": 100.27,
+  "confidence_threshold": 0.25,
+  "calibration_um_per_pixel": null,
+  "image_width": 1280,
+  "image_height": 720,
+  "disclaimer": "Image-based predictions identify suspected microplastic fragments. They do not chemically confirm plastic or polymer composition. Count bands are project-defined image indicators, not water-quality or safety standards.",
+  "id": "61fdd081a2c748c786927a9927314717",
+  "created_at": "2026-10-03T16:15:25.380141+00:00",
+  "input_name": "test_sample_01.jpg",
+  "result_image_url": "/results/61fdd081a2c748c786927a9927314717_annotated.jpg",
+  "original_image_url": "/results/61fdd081a2c748c786927a9927314717_original.jpg"
+}

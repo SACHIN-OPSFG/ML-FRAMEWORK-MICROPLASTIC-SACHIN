@@ -1,0 +1,28 @@
+{
+  "val": {
+    "metrics/precision(B)": 0.7645476046436661,
+    "metrics/recall(B)": 0.7772151898734178,
+    "metrics/mAP50(B)": 0.8527409662200993,
+    "metrics/mAP50-95(B)": 0.6770428658411166,
+    "fitness": 0.6770428658411166,
+    "speed_ms_per_image": {
+      "preprocess": 0.3312440396907943,
+      "inference": 3.485358940415849,
+      "loss": 0.001462251659165081,
+      "postprocess": 0.9184711919122203
+    }
+  },
+  "test": {
+    "metrics/precision(B)": 0.7996567157258739,
+    "metrics/recall(B)": 0.7636194925437102,
+    "metrics/mAP50(B)": 0.853510700279545,
+    "metrics/mAP50-95(B)": 0.6893097860330504,
+    "fitness": 0.6893097860330504,
+    "speed_ms_per_image": {
+      "preprocess": 0.3481105959026717,
+      "inference": 3.1731980131932884,
+      "loss": 0.0012142384048575991,
+      "postprocess": 0.8672798013496552
+    }
+  }
+}
