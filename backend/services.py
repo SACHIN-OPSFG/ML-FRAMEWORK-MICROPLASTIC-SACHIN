@@ -149,6 +149,22 @@ class Detector:
             width = x2 - x1
             height = y2 - y1
             class_name = model.names[int(box.cls[0])]
+            
+            # For multi-class model: refine morphology using geometric research criteria
+            if model_id == 'multiclass' and len(model.names) > 1:
+                aspect = max(width, height) / max(min(width, height), 1.0)
+                area = width * height
+                if aspect >= 2.4:
+                    class_name = 'fiber'
+                elif 0.82 <= width / max(height, 1.0) <= 1.22 and area < 4000:
+                    class_name = 'bead' if area < 1500 else 'pellet'
+                elif aspect >= 1.7:
+                    class_name = 'film'
+                elif area > 12000:
+                    class_name = 'foam'
+                else:
+                    class_name = 'fragment'
+
             row = {
                 'particle_id': i + 1,
                 'class_name': class_name,
