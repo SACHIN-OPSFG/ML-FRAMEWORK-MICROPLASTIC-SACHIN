@@ -1,0 +1,164 @@
+{
+  "generated_at": "2026-11-03T12:29:24.141525",
+  "datasets": [
+    {
+      "source_id": "wwtp_fragments",
+      "source_name": "Microplastic-Fragments-WWTP-Dataset",
+      "source_url": "https://huggingface.co/datasets/andreusv/Microplastic-Fragments-WWTP-Dataset",
+      "license": "CC BY 4.0",
+      "publication_year": 2024,
+      "doi": "https://doi.org/10.57967/hf/10280",
+      "origin": "Stereomicroscope, WWTP Valencia Spain",
+      "original_classes": {
+        "microplastic_fragment": 0
+      },
+      "mapped_classes": {
+        "fragment": 1
+      },
+      "image_type": "original_microscopy",
+      "splits": {
+        "train": {
+          "images": 1406,
+          "annotations": 2915
+        },
+        "val": {
+          "images": 302,
+          "annotations": 790
+        },
+        "test": {
+          "images": 302,
+          "annotations": 852
+        }
+      },
+      "total_images": 2010,
+      "total_annotations": 4557,
+      "image_hashes": {}
+    },
+    {
+      "source_id": "roboflow_multiclass",
+      "source_name": "Roboflow Universe MicroPlastic Datasets",
+      "source_url": "https://universe.roboflow.com/",
+      "license": "CC BY 4.0",
+      "publication_year": 2024,
+      "origin": "Community-contributed microscopy images",
+      "original_classes": {
+        "fiber": 0,
+        "fragment": 1,
+        "film": 2,
+        "pellet": 3
+      },
+      "mapped_classes": {
+        "fiber": 0,
+        "fragment": 1,
+        "film": 2,
+        "pellet": 3
+      },
+      "image_type": "original_microscopy",
+      "status": "requires_api_key",
+      "note": "Roboflow datasets require a free API key for download. See instructions below.",
+      "splits": {},
+      "total_images": 0,
+      "total_annotations": 0
+    },
+    {
+      "source_id": "asu_2022",
+      "source_name": "ASU Microplastics Images Dataset",
+      "source_url": "https://doi.org/10.48349/ASU/ZCEM6W",
+      "license": "CC0 1.0 (Public Domain)",
+      "publication_year": 2022,
+      "author": "David Little, Arizona State University",
+      "origin": "Microplastic fragments (<5mm), color JPEG images",
+      "original_classes": {
+        "microplastic": 0
+      },
+      "mapped_classes": {
+        "fragment": 1
+      },
+      "image_type": "classification_only",
+      "annotation_status": "no_detection_annotations",
+      "note": "Classification images only. No bounding boxes. Would require manual annotation for detection.",
+      "splits": {},
+      "total_images": 0,
+      "total_annotations": 0,
+      "status": "empty"
+    },
+    {
+      "source_id": "mdpi_sewage_2024",
+      "source_name": "Microscopic Image Dataset for Microplastic Analysis in Sewage",
+      "source_url": "https://www.kaggle.com/datasets/asd1g1/microplastic-in-sewage-system-segmentation-dataset",
+      "paper_doi": "https://doi.org/10.3390/microplastics3020016",
+      "license": "CC BY 4.0",
+      "publication_year": 2024,
+      "authors": "Gwanghee Lee, Jaeheon Jung, Sangjun Moon, Jihyun Jung, Kyoungson Jhang",
+      "origin": "Microscopic images of sewage system metal mesh filters",
+      "original_classes": {
+        "background": 0,
+        "microplastic": 1
+      },
+      "annotation_type": "binary_segmentation_masks",
+      "image_type": "original_microscopy_with_masks",
+      "note": "IMPORTANT: This dataset provides BINARY segmentation masks (microplastic vs background). It does NOT distinguish morphology classes (fiber/fragment/film/pellet). The reported 167K+ training entries are image PATCHES/CROPS, not independent originals. Requires Kaggle API for download. Useful for segmentation but needs annotation conversion for detection.",
+      "reported_counts": {
+        "training_entries": 167195,
+        "validation_entries": 87264,
+        "testing_entries": 87264,
+        "count_type": "PATCHES_not_original_images"
+      },
+      "status": "requires_kaggle_api",
+      "splits": {},
+      "total_images": 0,
+      "total_annotations": 0
+    },
+    {
+      "source_id": "synthetic_multiclass",
+      "source_name": "Synthetic Multi-Class Microplastic Training Data",
+      "license": "Generated for training purposes",
+      "image_type": "synthetic_microscopy",
+      "note": "Programmatically generated microplastic particle images for multi-class training",
+      "splits": {
+        "train": {
+          "images": 420,
+          "annotations": 1401
+        },
+        "val": {
+          "images": 90,
+          "annotations": 318
+        },
+        "test": {
+          "images": 90,
+          "annotations": 345
+        }
+      },
+      "total_images": 600,
+      "total_annotations": 2064
+    }
+  ],
+  "class_taxonomy": {
+    "0": "fiber",
+    "1": "fragment",
+    "2": "film",
+    "3": "pellet",
+    "4": "foam",
+    "5": "bead"
+  },
+  "source_class_maps": {
+    "wwtp_fragments": {
+      "microplastic_fragment": 1
+    },
+    "roboflow_multiclass": {
+      "fiber": 0,
+      "fibre": 0,
+      "fragment": 1,
+      "film": 2,
+      "pellet": 3,
+      "foam": 4,
+      "bead": 5,
+      "Fiber": 0,
+      "Fragment": 1,
+      "Film": 2,
+      "Pellet": 3,
+      "Foam": 4,
+      "Bead": 5
+    }
+  }
+}

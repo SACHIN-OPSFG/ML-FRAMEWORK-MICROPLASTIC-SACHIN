@@ -11,12 +11,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy requirements and install
-COPY requirements-tested.txt .
-RUN pip install --no-cache-dir -r requirements-tested.txt
+COPY requirements-docker.txt .
+RUN pip install --no-cache-dir -r requirements-docker.txt
 
 # Copy application files
 COPY backend/ ./backend/
-COPY ml/ ./ml/
+COPY ml/models/ ./ml/models/
+COPY ml/evaluation/ ./ml/evaluation/
+COPY ml/datasets/manifests/ ./ml/datasets/manifests/
 COPY sample_data/ ./sample_data/
 COPY frontend/dist/ ./frontend/dist/
 COPY yolov8n.pt .

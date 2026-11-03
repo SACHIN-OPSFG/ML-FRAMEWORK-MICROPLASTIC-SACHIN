@@ -1,0 +1,6 @@
+source_id,license,permits_training,permits_redistribution,requires_attribution,source_url
+wwtp_fragments,CC BY 4.0,Yes,Yes,Yes,https://huggingface.co/datasets/andreusv/Microplastic-Fragments-WWTP-Dataset
+roboflow_multiclass,CC BY 4.0,Yes,Yes,Yes,https://universe.roboflow.com/
+asu_2022,CC0 1.0 (Public Domain),Yes,Yes,No,https://doi.org/10.48349/ASU/ZCEM6W
+mdpi_sewage_2024,CC BY 4.0,Yes,Yes,Yes,https://www.kaggle.com/datasets/asd1g1/microplastic-in-sewage-system-segmentation-dataset
+synthetic_multiclass,Generated for training purposes,Check,Check,Check,

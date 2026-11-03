@@ -95,9 +95,81 @@
     {
       "test": "Missing model gives readable configuration error",
       "passed": true
+    },
+    {
+      "test": "Models endpoint returns list",
+      "passed": true
+    },
+    {
+      "test": "Baseline model listed and available",
+      "passed": true
+    },
+    {
+      "test": "Multiclass model listed in registry",
+      "passed": true
+    },
+    {
+      "test": "Predict with model_id=baseline works",
+      "passed": true
+    },
+    {
+      "test": "Baseline response includes model_id",
+      "passed": true
+    },
+    {
+      "test": "Baseline response includes model_name",
+      "passed": true
+    },
+    {
+      "test": "Baseline response includes disclaimer",
+      "passed": true
+    },
+    {
+      "test": "Baseline response includes class_distribution",
+      "passed": true
+    },
+    {
+      "test": "CSV export returns 200",
+      "passed": true
+    },
+    {
+      "test": "CSV has content-type text/csv",
+      "passed": true
+    },
+    {
+      "test": "CSV has header row",
+      "passed": true
+    },
+    {
+      "test": "Dataset summary returns 200",
+      "passed": true
+    },
+    {
+      "test": "Dataset summary has class_names",
+      "passed": true
+    },
+    {
+      "test": "Dataset summary has sources",
+      "passed": true
+    },
+    {
+      "test": "Evaluation endpoint returns 200",
+      "passed": true
+    },
+    {
+      "test": "Evaluation returns model info",
+      "passed": true
+    },
+    {
+      "test": "Individual history record works",
+      "passed": true
+    },
+    {
+      "test": "Invalid model_id rejected",
+      "passed": true
     }
   ],
-  "passed": 24,
+  "passed": 42,
   "sample_particles": 4,
-  "sample_analysis_id": "61fdd081a2c748c786927a9927314717"
+  "sample_analysis_id": "3842fc7b304f40d390fe426d6403db6b"
 }

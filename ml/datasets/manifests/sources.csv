@@ -1,0 +1,6 @@
+source_id,source_name,source_url,license,publication_year,total_images,total_annotations,image_type,status
+wwtp_fragments,Microplastic-Fragments-WWTP-Dataset,https://huggingface.co/datasets/andreusv/Microplastic-Fragments-WWTP-Dataset,CC BY 4.0,2024,2010,4557,original_microscopy,available
+roboflow_multiclass,Roboflow Universe MicroPlastic Datasets,https://universe.roboflow.com/,CC BY 4.0,2024,0,0,original_microscopy,requires_api_key
+asu_2022,ASU Microplastics Images Dataset,https://doi.org/10.48349/ASU/ZCEM6W,CC0 1.0 (Public Domain),2022,0,0,classification_only,empty
+mdpi_sewage_2024,Microscopic Image Dataset for Microplastic Analysis in Sewage,https://www.kaggle.com/datasets/asd1g1/microplastic-in-sewage-system-segmentation-dataset,CC BY 4.0,2024,0,0,original_microscopy_with_masks,requires_kaggle_api
+synthetic_multiclass,Synthetic Multi-Class Microplastic Training Data,,Generated for training purposes,,600,2064,synthetic_microscopy,available

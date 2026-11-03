@@ -1,0 +1,38 @@
+{
+  "train": {
+    "images": 1826,
+    "annotations": 4316,
+    "class_distribution": {
+      "fragment": 3340,
+      "film": 199,
+      "fiber": 359,
+      "foam": 153,
+      "bead": 114,
+      "pellet": 151
+    }
+  },
+  "val": {
+    "images": 392,
+    "annotations": 1108,
+    "class_distribution": {
+      "fiber": 84,
+      "foam": 25,
+      "fragment": 890,
+      "pellet": 49,
+      "film": 38,
+      "bead": 22
+    }
+  },
+  "test": {
+    "images": 392,
+    "annotations": 1197,
+    "class_distribution": {
+      "pellet": 44,
+      "fragment": 954,
+      "fiber": 82,
+      "foam": 36,
+      "bead": 24,
+      "film": 57
+    }
+  }
+}

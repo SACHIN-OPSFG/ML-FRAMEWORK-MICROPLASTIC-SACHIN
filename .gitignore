@@ -12,4 +12,13 @@ ml/training/
 ml/datasets/raw/*.tar.gz
 ml/datasets/raw/*.zip
 frontend/node_modules/
+testing_images_pool/
+ml/data/
+ml/datasets/combined_dataset/
+ml/datasets/processed/
+ml/datasets/fast_subset/
+ml/datasets/raw/
+ml/datasets/synthetic_multiclass/
+runs/
+node_modules/
 
