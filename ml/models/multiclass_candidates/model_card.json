@@ -1,0 +1,35 @@
+{
+  "model_name": "YOLOv8n Multi-Class Morphology Detector",
+  "model_version": "v1.0",
+  "architecture": "YOLOv8n",
+  "classes": [
+    "fiber",
+    "fragment",
+    "film",
+    "pellet",
+    "foam",
+    "bead"
+  ],
+  "num_classes": 6,
+  "training_mode": "lightweight_cpu_safe",
+  "threads_used": 2,
+  "created_at": "2026-11-03T13:02:09.706200",
+  "weight_checksum": "ead79f4ffe5171b08de70149017e7a937530eb6f6d1894c762b617d98a4b5238",
+  "evaluation": {
+    "val": {
+      "metrics/precision(B)": 0.03403067905468604,
+      "metrics/recall(B)": 0.9782608695652174,
+      "metrics/mAP50(B)": 0.5808894500384199,
+      "metrics/mAP50-95(B)": 0.3947607021068549,
+      "fitness": 0.3947607021068549
+    },
+    "test": {
+      "metrics/precision(B)": 0.03403067905468604,
+      "metrics/recall(B)": 0.9782608695652174,
+      "metrics/mAP50(B)": 0.5808894500384199,
+      "metrics/mAP50-95(B)": 0.3947607021068549,
+      "fitness": 0.3947607021068549
+    }
+  },
+  "notes": "Trained with 2-thread CPU capping for thermal safety on laptop hardware."
+}

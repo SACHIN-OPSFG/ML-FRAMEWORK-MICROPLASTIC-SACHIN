@@ -1,0 +1,12 @@
+names:
+  0: fiber
+  1: fragment
+  2: film
+  3: pellet
+  4: foam
+  5: bead
+nc: 6
+path: C:\Users\ramlu\OneDrive\Downloads\Sachin_Project\Microplastic_Detection_Sachin\ml\datasets\combined_dataset
+test: test/images
+train: train/images
+val: val/images

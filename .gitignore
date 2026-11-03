@@ -7,3 +7,9 @@ backend/storage/
 .env
 .ipynb_checkpoints/
 *.cache
+
+ml/training/
+ml/datasets/raw/*.tar.gz
+ml/datasets/raw/*.zip
+frontend/node_modules/
+

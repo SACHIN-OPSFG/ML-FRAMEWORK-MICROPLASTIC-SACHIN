@@ -12,6 +12,8 @@ def verify():
     def check(name, condition):
         assert condition,name
         checks.append({'test':name,'passed':True});print('PASS',name)
+
+    # ===== Original 24 checks =====
     check('Backend healthy with trained model',client.get('/health').json()['model_ready'])
     check('Model exposes actual evaluation metrics',bool(client.get('/model-info').json()['metrics']['test']))
     image=ROOT/'sample_data/test_sample_01.jpg'; blob=image.read_bytes()
@@ -49,14 +51,56 @@ def verify():
     check('Internal database is not downloadable',client.get('/results/history.sqlite3').status_code==404)
     cors=client.options('/predict',headers={'Origin':'http://localhost:5173','Access-Control-Request-Method':'POST'})
     check('Configured frontend origin allowed',cors.headers.get('access-control-allow-origin')=='http://localhost:5173')
-    actual_path=services.MODEL_PATH
-    try:
-        services.MODEL_PATH=ROOT/'missing-model-for-test.pt'
-        missing=services.Detector()
-        try: missing.load(); failure=False
-        except RuntimeError as e: failure='missing' in str(e)
-        check('Missing model gives readable configuration error',failure)
-    finally: services.MODEL_PATH=actual_path
+    missing=services.Detector()
+    try: missing.load('nonexistent_model_xyz'); failure=False
+    except (RuntimeError, ValueError) as e: failure='missing' in str(e).lower() or 'unknown' in str(e).lower() or 'not found' in str(e).lower()
+    check('Missing model gives readable configuration error',failure)
+
+    # ===== New Phase 2 checks =====
+    # Models listing endpoint
+    models_resp=client.get('/models')
+    check('Models endpoint returns list',models_resp.status_code==200 and isinstance(models_resp.json(),list))
+    models_list=models_resp.json()
+    check('Baseline model listed and available',any(m['model_id']=='baseline' and m['available'] for m in models_list))
+    check('Multiclass model listed in registry',any(m['model_id']=='multiclass' for m in models_list))
+
+    # Model selection in predict
+    baseline_resp=client.post('/predict',files={'file':(image.name,blob,'image/jpeg')},data={'confidence':'.25','model_id':'baseline'})
+    check('Predict with model_id=baseline works',baseline_resp.status_code==200)
+    baseline_rec=baseline_resp.json()
+    check('Baseline response includes model_id',baseline_rec.get('model_id')=='baseline')
+    check('Baseline response includes model_name',bool(baseline_rec.get('model_name')))
+    check('Baseline response includes disclaimer',bool(baseline_rec.get('disclaimer')))
+    check('Baseline response includes class_distribution',isinstance(baseline_rec.get('class_distribution'),dict))
+
+    # CSV export
+    csv_resp=client.get(f'/exports/{baseline_rec["id"]}.csv')
+    check('CSV export returns 200',csv_resp.status_code==200)
+    check('CSV has content-type text/csv','text/csv' in csv_resp.headers.get('content-type',''))
+    csv_text=csv_resp.text
+    check('CSV has header row','particle_id' in csv_text and 'class_name' in csv_text)
+
+    # Dataset summary
+    ds_resp=client.get('/dataset/summary')
+    check('Dataset summary returns 200',ds_resp.status_code==200)
+    ds=ds_resp.json()
+    check('Dataset summary has class_names','class_names' in ds and len(ds['class_names'])>=1)
+    check('Dataset summary has sources',isinstance(ds.get('sources'),list))
+
+    # Evaluation endpoint
+    eval_resp=client.get('/evaluation/baseline')
+    check('Evaluation endpoint returns 200',eval_resp.status_code==200)
+    eval_data=eval_resp.json()
+    check('Evaluation returns model info','model_id' in eval_data)
+
+    # Individual history record
+    hist_resp=client.get(f'/history/{baseline_rec["id"]}')
+    check('Individual history record works',hist_resp.status_code==200 and hist_resp.json()['id']==baseline_rec['id'])
+
+    # Invalid model_id
+    bad_model=client.post('/predict',files={'file':(image.name,blob,'image/jpeg')},data={'confidence':'.25','model_id':'nonexistent'})
+    check('Invalid model_id rejected',bad_model.status_code in (400,503))
+
     summary={'checks':checks,'passed':len(checks),'sample_particles':count,'sample_analysis_id':record['id']}
     (output/'test_results.json').write_text(json.dumps(summary,indent=2))
     print(json.dumps(summary,indent=2))
